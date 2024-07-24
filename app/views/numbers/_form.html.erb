@@ -1,0 +1,8 @@
+<%= form_with model: [ @user, @user.numbers.build ] do |form| %>
+    <p>
+        <%= form.text_field :phone_num, class: "form-control", placeholder: "Phone Number" %>
+    </p>
+    <p>
+        <%= form.submit class:"btn btn-success" %>
+    </p>
+<% end %>

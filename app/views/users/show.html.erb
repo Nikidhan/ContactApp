@@ -1,0 +1,17 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold"><%= @user.name %></h1>
+        <%= render @user.numbers %>
+        <br>
+        <div>
+            <%= link_to "Edit User", edit_user_path(@user), class:"btn btn-warning" %>
+            <%= link_to "Delete User", user_path(@user), class:"btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete #{@user.name}?" } %>
+        </div>
+    </div>
+</div>
+
+<h2><%= "Add number for #{@user.name}"%></h2>
+<%= render 'numbers/form' %>
+<br>
+
+<%= link_to "Back", users_path, class:"btn btn-primary" %>

@@ -1,0 +1,4 @@
+<div>
+    <%= number.phone_num %>
+    <%= link_to "Delete ", [number.user, number], data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete #{number.phone_num}?" } %>
+</div>

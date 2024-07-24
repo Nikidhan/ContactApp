@@ -1,0 +1,23 @@
+<h1>User List</h1>
+
+<table class="table table-striped table">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= link_to "Show", user, class:"btn btn-success" %>
+            <%= link_to "Edit", edit_user_path(user), class:"btn btn-warning" %>
+            <%= link_to "Delete", user, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete #{user.name}?"} %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to "Add User", new_user_path, class:"btn btn-primary" %>
